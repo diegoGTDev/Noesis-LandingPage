@@ -1,5 +1,4 @@
-//
-import React from 'react';
+
 import '../styles/Nosotros.css'; // Asegúrate de tener este archivo CSS con los estilos necesarios
 export function Nosotros() {
     return (

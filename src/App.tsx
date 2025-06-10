@@ -23,7 +23,7 @@ function App() {
       <section className="hero" id="inicio">
         <div className="hero-content">
           <h1>NOESIS</h1>
-          <span className="slogan">Pensando en arte, Codificando en alma</span>
+          <span className="slogan">Pensando en arte, codificando en alma</span>
           <p className="hero-desc">
             En NOESIS creamos soluciones de software personalizadas para impulsar tu negocio. Nuestro equipo combina creatividad, experiencia y pasión por la tecnología para transformar ideas en productos digitales de alto impacto.
           </p>
