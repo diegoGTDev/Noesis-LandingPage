@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding:0;
   text-align: center;
 }
 
@@ -80,12 +80,35 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+@keyframes typing {
+  /* Escritura: 0% a 30% */
+  0% { width: 0 }
+  30% { width: 38ch }
+  /* Mantener visible: 30% a 70% */
+  70% { width: 38ch }
+  /* Borrado: 70% a 100% */
+  100% { width: 0 }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent }
+  50% { border-color: #111 }
+}
 
 .slogan {
+  display: block;
   font-size: 1.4em;
   font-weight: 500;
   margin: 0.5em 0 1.5em 0;
   color: #111;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 38ch;
+  overflow: hidden;
+  /* Cambia la duración para controlar la velocidad total (ej: 10s) */
+  animation:
+    typing 10s steps(38) infinite,
+    blink 0.7s step-end infinite;
 }
 
 main {
@@ -256,45 +279,6 @@ footer {
 }
 .btn-principal:hover {
   background: #333;
-}
-
-.testimonios {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px #0001;
-  padding: 2em 1.5em;
-  margin-bottom: 2em;
-  text-align: center;
-}
-.testimonios-lista {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-  margin-top: 1.5em;
-}
-@media (min-width: 700px) {
-  .testimonios-lista {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-.testimonio {
-  background: #e5e5e5;
-  border-radius: 12px;
-  padding: 1.2em 1em;
-  min-width: 220px;
-  max-width: 320px;
-  margin: 0 auto;
-  box-shadow: 0 1px 4px #0001;
-}
-.testimonio .texto {
-  font-size: 1.05em;
-  margin-bottom: 0.7em;
-}
-.testimonio .nombre {
-  font-size: 0.98em;
-  color: #444;
-  font-weight: 600;
 }
 
 .proyectos {
@@ -477,6 +461,10 @@ footer {
   overflow: hidden;
 }
 .hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 700px;
   margin: 0 auto;
   z-index: 2;
@@ -505,7 +493,7 @@ footer {
 }
 
 .clientes {
-  background: #fff;
+  width: 100%;
   padding: 2.5em 0 1.5em 0;
   text-align: center;
 }
@@ -519,26 +507,14 @@ footer {
   gap: 2.5em;
   align-items: center;
 }
-.logo-cliente {
-  height: 38px;
-  width: auto;
-  filter: grayscale(1) contrast(1.2);
-  opacity: 0.8;
-  transition: filter 0.2s, opacity 0.2s;
-}
-.logo-cliente:hover {
-  filter: grayscale(0) contrast(1.1);
-  opacity: 1;
-}
 
 .testimonios {
-  background: #f7f7f7;
+  background: #D7D7D7;
   border-radius: 16px;
+  width: 100%;
   box-shadow: 0 2px 8px #0001;
   padding: 2.5em 1.5em 2em 1.5em;
-  margin: 2em auto;
   text-align: center;
-  max-width: 1100px;
 }
 .testimonios-lista {
   display: flex;
@@ -679,9 +655,6 @@ footer {
     padding: 0.7em 0.2em;
     margin-bottom: 1.2em;
   }
-  section {
-    margin-bottom: 1.5em;
-  }
   .proyecto-titulo {
     font-size: 1.08em;
     max-width: 95%;
@@ -689,10 +662,6 @@ footer {
     white-space: normal;
     overflow-wrap: break-word;
   }
-}
-
-section {
-  margin-bottom: 2.5em;
 }
 
 .logos-titulo {
@@ -704,13 +673,13 @@ section {
 }
 .marquee {
   width: 100vw;
-  max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
   background: transparent;
   padding: 0.5em 0 1.5em 0;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 .marquee-inner {
   display: flex;
@@ -718,39 +687,27 @@ section {
   gap: 3em;
   animation: marquee-move 45s linear infinite;
   width: max-content;
+  will-change: transform;
 }
 .slow-marquee {
   animation-duration: 70s !important;
-}
-
-.testimonios-titulo {
-  text-align: center;
-  font-size: 1.25em;
-  font-weight: bold;
-  margin-bottom: 1.5em;
-  margin-top: 0.5em;
-}
-
-/* Animaciones de transición para el carrusel de testimonios */
-.testimonios-carrusel.slide-next .testimonios-carrusel-inner {
-  animation: slide-next-anim 0.35s cubic-bezier(.4,0,.2,1);
-}
-.testimonios-carrusel.slide-prev .testimonios-carrusel-inner {
-  animation: slide-prev-anim 0.35s cubic-bezier(.4,0,.2,1);
-}
-@keyframes slide-next-anim {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-120px); }
-}
-@keyframes slide-prev-anim {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(120px); }
 }
 
 @keyframes marquee-move {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* Duplicar los elementos para simular el bucle infinito */
+.marquee-inner {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  animation: marquee-move 45s linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+
 @media (min-width: 900px) {
   .marquee-inner {
     gap: 4em;
@@ -768,15 +725,14 @@ section {
   }
 }
 .marquee .logo-cliente {
-  height: 38px;
+  height: 48px;
   width: auto;
-  filter: grayscale(1) contrast(1.2);
   opacity: 0.8;
   transition: filter 0.2s, opacity 0.2s;
   background: transparent;
 }
 .marquee .logo-cliente:hover {
-  filter: grayscale(0) contrast(1.1);
+  filter: drop-shadow(0 0 1em #646cffaa);
   opacity: 1;
 }
 
