@@ -1,0 +1,11 @@
+.nosotros-container {
+    padding: 2px;
+    width: 100%;
+    background-color: #D7D7D7;
+}
+
+.nosotros-container h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}

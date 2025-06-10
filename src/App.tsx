@@ -8,6 +8,7 @@ import { proyectosIniciales } from './data/proyectos';
 import { testimoniosIniciales } from './data/testimonios';
 import Servicios from './components/Servicios';
 import Tecnologias from './components/Tecnologias';
+import { Nosotros } from './components/Nosotros';
 
 
 
@@ -18,7 +19,7 @@ function App() {
   const [proyectos] = useState(proyectosIniciales);
   return (
     <div className="noesis-landing">
-      <NavMenu/>
+      <NavMenu />
       <section className="hero" id="inicio">
         <div className="hero-content">
           <h1>NOESIS</h1>
@@ -30,18 +31,16 @@ function App() {
         </div>
       </section>
       <section className="tecnologias" id="tecnologias">
-        <Tecnologias/>
+        <Tecnologias />
       </section>
-      <section>
-        <h3>Nosotros</h3>
-        <h2>Ofrecemos un servicio digital único, transformando tus ideas en una realidad</h2>
-      </section>
+      <Nosotros />
+
       <section className="testimonios">
         <h3 className="testimonios-titulo">Opinión de nuestros clientes</h3>
         <Testimonios testimonios={testimoniosIniciales} interval={9000} />
       </section>
       <section className="servicios" id="servicios">
-        <Servicios/>
+        <Servicios />
       </section>
       <section className="proyectos" id="proyectos">
         <h3>Algunos de nuestros proyectos</h3>
@@ -72,8 +71,8 @@ function App() {
           ))}
         </div>
       </section>
-      <Contacto/>
-      <Footer/>
+      <Contacto />
+      <Footer />
     </div>
   );
 }
