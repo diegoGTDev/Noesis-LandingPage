@@ -1,4 +1,4 @@
-import React from "react";
+
 import { ReactIcon } from "../icons/ReactIcon";
 import AngularIcon from "../icons/AngularIcon";
 import AstroIcon from "../icons/AstroIcon";
