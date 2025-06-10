@@ -1,8 +1,8 @@
 import './App.css';
 import logo from './assets/logo-removebg-preview.png';
 import { useState, useEffect, useRef } from 'react';
-import type { ReactNode } from 'react';
-
+import NavMenu from './components/NavMenu';
+import Testimonios from './components/Testimonios';
 const testimoniosIniciales = [
   {
     nombre: 'Juan Pérez',
@@ -25,7 +25,6 @@ const testimoniosIniciales = [
     texto: 'Gran calidad humana y técnica. Siempre atentos a nuestras necesidades.'
   }
 ];
-
 const proyectosIniciales = [
   {
     nombre: 'Plataforma de gestión educativa',
@@ -60,56 +59,7 @@ const logosGenericos = [
 ];
 
 // Slider de testimonios tipo carrusel 3 tarjetas
-function TestimoniosSlider({ testimonios, interval = 8000 }: { testimonios: {nombre: string, texto: string}[], interval?: number }) {
-  const [index, setIndex] = useState(0);
-  const [anim, setAnim] = useState('');
-  const total = testimonios.length;
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const next = () => {
-    setAnim('slide-next');
-    setTimeout(() => {
-      setIndex((prev) => (prev + 1) % total);
-      setAnim('');
-    }, 350);
-  };
-  const prev = () => {
-    setAnim('slide-prev');
-    setTimeout(() => {
-      setIndex((prev) => (prev - 1 + total) % total);
-      setAnim('');
-    }, 350);
-  };
-
-  useEffect(() => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(next, interval);
-    return () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); };
-  }, [index, interval, total]);
-
-  const getIdx = (offset: number) => (index + offset + total) % total;
-  const visibles = [getIdx(-1), getIdx(0), getIdx(1)];
-
-  return (
-    <div className={`testimonios-carrusel ${anim}`}>
-      <div className="testimonios-carrusel-inner">
-        {visibles.map((idx, pos) => (
-          <div
-            key={idx}
-            className={`testimonio-carrusel ${pos === 1 ? 'central' : 'lateral'}`}
-          >
-            <div className="testimonio-cuerpo">{`"${testimonios[idx].texto}"`}</div>
-            <div className="testimonio-firma">- {testimonios[idx].nombre}</div>
-          </div>
-        ))}
-      </div>
-      <div className="testimonios-carrusel-controles">
-        <button className="slider-arrow" onClick={prev} aria-label="Anterior">&#8592;</button>
-        <button className="slider-arrow" onClick={next} aria-label="Siguiente">&#8594;</button>
-      </div>
-    </div>
-  );
-}
 
 function App() {
   // Proyectos dinámicos
@@ -118,34 +68,11 @@ function App() {
   // Marquee infinito: duplicar logos para que siempre haya flujo
   const marqueeLogos = [...logosGenericos, ...logosGenericos, ...logosGenericos, ...logosGenericos, ...logosGenericos];
 
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  // Cerrar menú al navegar
-  const handleNavClick = () => setMenuOpen(false);
-
   return (
     <div className="noesis-landing">
-      {/* Menú fijo */}
-      <nav className="main-nav fixed">
-        <div className="nav-content">
-          <img src={logo} alt="Logo Noesis" className="logo-nav" />
-          <button className="menu-hamburguesa" onClick={() => setMenuOpen(!menuOpen)} aria-label="Abrir menú">
-            <span className="menu-bar"></span>
-            <span className="menu-bar"></span>
-            <span className="menu-bar"></span>
-          </button>
-          <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-            <li><a href="#inicio" onClick={handleNavClick}>Inicio</a></li>
-            <li><a href="#clientes" onClick={handleNavClick}>Nuestros clientes</a></li>
-            <li><a href="#servicios" onClick={handleNavClick}>Servicios</a></li>
-            <li><a href="#proyectos" onClick={handleNavClick}>Proyectos</a></li>
-            <li><a href="#contacto" onClick={handleNavClick}>Contáctenos</a></li>
-          </ul>
-        </div>
-      </nav>
+      <NavMenu/>
       {/* Hero principal */}
       <section className="hero" id="inicio">
-        
         <div className="hero-content">
           <h1>NOESIS</h1>
           <h2 className="slogan">Pensando en arte, Codificando en alma</h2>
@@ -176,7 +103,7 @@ function App() {
       {/* Testimonios - Carrusel 3 tarjetas */}
       <section className="testimonios">
         <h3 className="testimonios-titulo">Opinión de nuestros clientes</h3>
-        <TestimoniosSlider testimonios={testimoniosIniciales} interval={9000} />
+        <Testimonios testimonios={testimoniosIniciales} interval={9000} />
           <svg className="hero-wave" width="100%" height="80" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0,40 Q360,0 720,40 Q1080,80 1440,40" stroke="#bbb" strokeWidth="2" fill="none"/>
         </svg>
