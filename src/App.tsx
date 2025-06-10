@@ -29,8 +29,12 @@ function App() {
           <button className="btn-principal" onClick={() => window.location.hash = '#contacto'}>Contáctenos</button>
         </div>
       </section>
-      <section className="clientes" id="clientes">
+      <section className="tecnologias" id="tecnologias">
         <Tecnologias/>
+      </section>
+      <section>
+        <h3>Nosotros</h3>
+        <h2>Ofrecemos un servicio digital único, transformando tus ideas en una realidad</h2>
       </section>
       <section className="testimonios">
         <h3 className="testimonios-titulo">Opinión de nuestros clientes</h3>

@@ -25,7 +25,7 @@ export default function Tecnologias() {
     ];
 
     // Duplicar los iconos para el efecto marquee infinito
-    const allTechs = [...tecnologias, ...tecnologias, ...tecnologias];
+    const allTechs = [...tecnologias, ...tecnologias, ...tecnologias, ...tecnologias];
 
     return (
         <>
@@ -36,7 +36,7 @@ export default function Tecnologias() {
                         const IconComponent = Object.values(tech)[0];
                         return (
                             <div key={index}>
-                                <IconComponent className="logo-cliente" />
+                                <IconComponent className="icono-tecnologias" />
                             </div>
                         );
                     })}
