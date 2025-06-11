@@ -147,6 +147,14 @@ main {
   border-radius: 8px;
   color: #111;
   font-weight: 500;
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+
+.servicios li:hover {
+  transform: scale(1.02);
+  background: #111;
+  color: #fff;
+  box-shadow: 0 2px 8px #0002;
 }
 
 .contacto {
