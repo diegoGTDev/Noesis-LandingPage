@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import NavMenu from './components/NavMenu';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
-import Servicios from './components/Servicios';
 import Tecnologias from './components/Tecnologias';
 import { Nosotros } from './components/Nosotros';
 import VentajasDeDigitalizar from './components/VentajasDeDigitalizar';
@@ -25,25 +24,27 @@ function App() {
           <p className="hero-desc">
             En NOESIS creamos soluciones de software personalizadas para impulsar tu negocio. Nuestro equipo combina creatividad, experiencia y pasión por la tecnología para transformar ideas en productos digitales de alto impacto.
           </p>
-          <ContactButton/>
+          <ContactButton />
         </div>
       </section>
       <section className="tecnologias" id="tecnologias">
         <Tecnologias />
       </section>
       <Nosotros />
+
       <VentajasDeDigitalizar />
-      
+
       <div data-aos="fade-up"
-      data-aos-anchor-placement="center-center"><section className="servicios" id="servicios">
+        data-aos-anchor-placement="center-center">
+        <section className="servicios" id="servicios">
 
-      </section></div>
-
+        </section>
+      </div>
 
       <Contacto />
 
-      
-      
+
+
       <Footer />
     </div>
   );
