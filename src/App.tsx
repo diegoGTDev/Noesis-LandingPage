@@ -1,18 +1,20 @@
 import './App.css';
+import { useEffect } from 'react';
 import NavMenu from './components/NavMenu';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
 import Servicios from './components/Servicios';
 import Tecnologias from './components/Tecnologias';
 import { Nosotros } from './components/Nosotros';
+import VentajasDeDigitalizar from './components/VentajasDeDigitalizar';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import ContactButton from './components/Buttons/ContactButton';
 
-
-
-
-
-
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: false });
+  }, []);
   return (
     <div className="noesis-landing">
       <NavMenu />
@@ -30,11 +32,18 @@ function App() {
         <Tecnologias />
       </section>
       <Nosotros />
-      <section className="servicios" id="servicios">
-        <Servicios />
-      </section>
-  
+      <VentajasDeDigitalizar />
+      
+      <div data-aos="fade-up"
+      data-aos-anchor-placement="center-center"><section className="servicios" id="servicios">
+
+      </section></div>
+
+
       <Contacto />
+
+      
+      
       <Footer />
     </div>
   );

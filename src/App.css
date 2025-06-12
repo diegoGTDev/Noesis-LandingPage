@@ -151,6 +151,56 @@ main {
   border-radius: 8px;
   color: #111;
   font-weight: 500;
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+
+.servicios li:hover {
+  transform: scale(1.02);
+  background: #111;
+  color: #fff;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.ventajas-digitalizar {
+  padding: 2em 0;
+  text-align: center;
+}
+.ventajas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+}
+.ventaja-item {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 1.5em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.ventaja-img {
+  width: 150px;
+  height: 115px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f3f3f3;
+}
+.ventaja-texto {
+  text-align: left;
+}
+@media (max-width: 700px) {
+  .ventaja-item {
+    flex-direction: column;
+    gap: 1em;
+    text-align: center;
+  }
+  .ventaja-texto {
+    text-align: center;
+  }
 }
 
 
