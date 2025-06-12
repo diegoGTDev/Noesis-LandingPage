@@ -231,22 +231,7 @@ footer {
   color: #444;
 }
 
-.btn-principal {
-  background: #111;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 0.9em 2em;
-  font-size: 1.1em;
-  font-weight: 700;
-  margin-top: 1.2em;
-  cursor: pointer;
-  transition: background 0.2s;
-  box-shadow: 0 2px 8px #0002;
-}
-.btn-principal:hover {
-  background: #333;
-}
+
 
 .proyectos {
   background: #f7f7f7;

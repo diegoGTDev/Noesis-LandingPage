@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Servicios from './components/Servicios';
 import Tecnologias from './components/Tecnologias';
 import { Nosotros } from './components/Nosotros';
+import ContactButton from './components/Buttons/ContactButton';
 
 
 
@@ -22,7 +23,7 @@ function App() {
           <p className="hero-desc">
             En NOESIS creamos soluciones de software personalizadas para impulsar tu negocio. Nuestro equipo combina creatividad, experiencia y pasión por la tecnología para transformar ideas en productos digitales de alto impacto.
           </p>
-          <button className="btn-principal" onClick={() => window.location.hash = '#contacto'}>Contáctenos</button>
+          <ContactButton/>
         </div>
       </section>
       <section className="tecnologias" id="tecnologias">
