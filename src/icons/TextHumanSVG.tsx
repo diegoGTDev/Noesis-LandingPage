@@ -1,4 +1,4 @@
-import React from "react";
+
 
 export default function TextHumanSVG({className}: { className?: string }) {
   return (
