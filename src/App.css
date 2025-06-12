@@ -164,12 +164,15 @@ main {
 .ventajas-digitalizar {
   padding: 2em 0;
   text-align: center;
+
 }
 .ventajas-lista {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 2em;
-  align-items: center;
+  justify-content: center;
+  padding: 0 15em;
 }
 .ventaja-item {
   display: flex;
@@ -179,16 +182,31 @@ main {
   border-radius: 16px;
   box-shadow: 0 2px 8px #0001;
   padding: 1.5em;
-  max-width: 800px;
+  width: calc(50% - 2em);
+  max-width: 550px;
   margin: 0 auto;
+  transition: transform 0.3s;
+}
+.ventaja-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 24px #0002;
 }
 .ventaja-img {
-  width: 150px;
-  height: 115px;
-  object-fit: contain;
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
   border-radius: 12px;
   background: #f3f3f3;
+  max-width: 200px;
+  max-height: 150px;
+  min-width: 200px;
+  min-height: 150px;
 }
+
+.ventaja-item.reverse {
+  flex-direction: row-reverse;
+}
+
 .ventaja-texto {
   text-align: left;
 }
@@ -200,6 +218,22 @@ main {
   }
   .ventaja-texto {
     text-align: center;
+  }
+  .ventaja-item.reverse {
+    flex-direction: column;
+  }
+  .ventaja-item {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px #0001;
+    padding: 1.5em;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    transition: transform 0.3s;
   }
 }
 
