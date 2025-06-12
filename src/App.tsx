@@ -34,13 +34,6 @@ function App() {
 
       <VentajasDeDigitalizar />
 
-      <div data-aos="fade-up"
-        data-aos-anchor-placement="center-center">
-        <section className="servicios" id="servicios">
-
-        </section>
-      </div>
-
       <Contacto />
 
 
