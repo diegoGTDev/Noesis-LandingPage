@@ -9,13 +9,9 @@ import { testimoniosIniciales } from './data/testimonios';
 import Servicios from './components/Servicios';
 import Tecnologias from './components/Tecnologias';
 import { Nosotros } from './components/Nosotros';
+import VentajasDeDigitalizar from './components/VentajasDeDigitalizar';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-
-
-
-
 
 function App() {
   useEffect(() => {
@@ -43,6 +39,7 @@ function App() {
         <h3 className="testimonios-titulo">Opinión de nuestros clientes</h3>
         <Testimonios testimonios={testimoniosIniciales} interval={9000} />
       </section></div>
+      <VentajasDeDigitalizar />
       
       <div data-aos="fade-up"
       data-aos-anchor-placement="center-center"><section className="servicios" id="servicios">
