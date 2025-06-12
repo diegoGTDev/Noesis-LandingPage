@@ -1,11 +1,9 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import NavMenu from './components/NavMenu';
-import Testimonios from './components/Testimonios';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
 import { proyectosIniciales } from './data/proyectos';
-import { testimoniosIniciales } from './data/testimonios';
 import Servicios from './components/Servicios';
 import Tecnologias from './components/Tecnologias';
 import { Nosotros } from './components/Nosotros';
@@ -35,11 +33,8 @@ function App() {
         <Tecnologias />
       </section>
       <Nosotros />
-      <div data-aos="fade-left"><section className="testimonios">
-        <h3 className="testimonios-titulo">Opinión de nuestros clientes</h3>
-        <Testimonios testimonios={testimoniosIniciales} interval={9000} />
-      </section></div>
-      <VentajasDeDigitalizar />
+
+      <VentajasDeDigitalizar/>
       
       <div data-aos="fade-up"
       data-aos-anchor-placement="center-center"><section className="servicios" id="servicios">
@@ -77,9 +72,9 @@ function App() {
       </section>
       </div>
 
-      <div data-aos="fade-up-right">
+     
       <Contacto />
-      </div>
+   
       
       
       <Footer />
