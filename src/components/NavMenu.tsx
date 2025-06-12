@@ -2,8 +2,6 @@ import logo from '../assets/logo-removebg-preview.png';
 import {useState} from 'react';
 export default function NavMenu() {
     const [menuOpen, setMenuOpen] = useState(false);
-
-    // Cerrar menú al navegar
     const handleNavClick = () => setMenuOpen(false);
 
     return (
@@ -17,9 +15,8 @@ export default function NavMenu() {
                 </button>
                 <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
                     <li><a href="#inicio" onClick={handleNavClick}>Inicio</a></li>
-                    <li><a href="#tecnologias" onClick={handleNavClick}>Nuestros clientes</a></li>
+                    <li><a href="#nosotros" onClick={handleNavClick}>Nosotros</a></li>
                     <li><a href="#servicios" onClick={handleNavClick}>Servicios</a></li>
-                    <li><a href="#proyectos" onClick={handleNavClick}>Proyectos</a></li>
                     <li><a href="#contacto" onClick={handleNavClick}>Contáctenos</a></li>
                 </ul>
             </div>
