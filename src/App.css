@@ -84,6 +84,42 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.hero {
+  background: #e5e5e5;
+  padding-top: 110px;
+  padding-bottom: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+.hero h1 {
+  font-size: 3.5em;
+  margin-bottom: 0.2em;
+  letter-spacing: 2px;
+}
+
+.hero-desc {
+  font-size: 1.15em;
+  color: #222;
+  margin-bottom: 1.5em;
+}
+.hero-wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 1;
+}
 @keyframes typing {
   /* Escritura: 0% a 30% */
   0% { width: 0 }
@@ -108,12 +144,45 @@ body {
   white-space: nowrap;
   border-right: 4px solid;
   width: 38ch;
+  max-width: 100vw;
+  min-width: 0;
   overflow: hidden;
-  /* Cambia la duración para controlar la velocidad total (ej: 10s) */
   animation:
     typing 10s steps(38) infinite,
     blink 0.7s step-end infinite;
+  box-sizing: border-box;
 }
+
+@media (max-width: 400px) {
+  .slogan {
+    width: 18ch;
+    max-width: 98vw;
+    font-size: 1em;
+    white-space: nowrap;
+    border-right-width: 2px;
+    /* La animación sigue activa */
+  }
+}
+
+@media (max-width: 700px){
+    .hero-content {
+    padding: 0 0.5em;
+  }
+}
+@media (max-width: 375px) {
+  .hero-content .slogan{
+    font-size: 1em;
+
+  }
+}
+
+@media (max-width: 320px){
+  .hero-content .slogan{
+    font-size: 0.9em;
+  }
+
+}
+
 
 main {
   width: 100%;
@@ -159,82 +228,6 @@ main {
   background: #111;
   color: #fff;
   box-shadow: 0 2px 8px #0002;
-}
-
-.ventajas-digitalizar {
-  padding: 2em 0;
-  text-align: center;
-
-}
-.ventajas-lista {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2em;
-  justify-content: center;
-  padding: 0 15em;
-}
-.ventaja-item {
-  display: flex;
-  align-items: center;
-  gap: 2em;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px #0001;
-  padding: 1.5em;
-  width: calc(50% - 2em);
-  max-width: 550px;
-  margin: 0 auto;
-  transition: transform 0.3s;
-}
-.ventaja-item:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 8px 24px #0002;
-}
-.ventaja-img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 12px;
-  background: #f3f3f3;
-  max-width: 200px;
-  max-height: 150px;
-  min-width: 200px;
-  min-height: 150px;
-}
-
-.ventaja-item.reverse {
-  flex-direction: row-reverse;
-}
-
-.ventaja-texto {
-  text-align: left;
-}
-@media (max-width: 700px) {
-  .ventaja-item {
-    flex-direction: column;
-    gap: 1em;
-    text-align: center;
-  }
-  .ventaja-texto {
-    text-align: center;
-  }
-  .ventaja-item.reverse {
-    flex-direction: column;
-  }
-  .ventaja-item {
-    display: flex;
-    align-items: center;
-    gap: 2em;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px #0001;
-    padding: 1.5em;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    transition: transform 0.3s;
-  }
 }
 
 
@@ -488,45 +481,7 @@ footer {
   color: #444;
 }
 
-.hero {
-  background: #e5e5e5;
-  padding-top: 110px;
-  padding-bottom: 40px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 700px;
-  margin: 0 auto;
-  z-index: 2;
-  position: relative;
-}
-.hero h1 {
-  font-size: 3.5em;
-  margin-bottom: 0.2em;
-  letter-spacing: 2px;
-}
-.slogan {
-  font-size: 1.5em;
-  margin-bottom: 0.7em;
-}
-.hero-desc {
-  font-size: 1.15em;
-  color: #222;
-  margin-bottom: 1.5em;
-}
-.hero-wave {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  z-index: 1;
-}
+
 
 .tecnologias {
   width: 100%;
@@ -967,11 +922,8 @@ html, body, #root {
     top: 48px;
     font-size: 1em;
   }
-  .hero-content {
-    padding: 0 0.5em;
-  }
-}
 
+}
 .testimonios-carrusel-inner {
   display: flex;
   gap: 2em;
