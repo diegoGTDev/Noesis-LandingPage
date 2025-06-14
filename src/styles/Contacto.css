@@ -95,4 +95,25 @@
     max-width: 400px;
     height: auto;
   }
+} 
+
+@media (max-width: 500px) {
+  .contacto-info h3 {
+    font-size: 2em;
+  }
+  .contacto-info p {
+    font-size: 0.9em;
+  }
+  .contacto-info-svg {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .contacto-info-text {
+    width: 95%;
+    text-align: center;
+  }
 }
