@@ -37,3 +37,19 @@
     max-width: 600px;
     margin: 2rem 0;
 }
+
+/* Nosotros responsive design */
+@media (max-width: 768px) {
+    .nosotros-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    .nosotros-content {
+        max-width: 85%;
+        text-align: center;
+    }
+    .nosotros-team-svg {
+        max-width: 100%;
+    }
+}
