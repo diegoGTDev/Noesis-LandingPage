@@ -48,3 +48,41 @@
   color: #333;
   margin-bottom: 1rem;
 }
+
+/* Responsive of contacto */
+
+@media (max-width: 768px) {
+
+  .contacto{
+    height: auto;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .contacto form{
+    margin-bottom: 2rem;
+    width: 70%;
+  }
+  .contacto-info {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contacto-info-text{
+    width: 100%;
+    text-align: center;
+  }
+
+  .contacto-info h3 {
+    font-size: 2.5em;
+  }
+
+  .contacto-info p {
+    font-size: 1em;
+  }
+  .contacto-info-svg {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+}
