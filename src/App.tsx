@@ -31,13 +31,8 @@ function App() {
         <Tecnologias />
       </section>
       <Nosotros />
-
       <VentajasDeDigitalizar />
-
       <Contacto />
-
-
-
       <Footer />
     </div>
   );
