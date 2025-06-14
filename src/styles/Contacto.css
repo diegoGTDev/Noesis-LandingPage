@@ -51,7 +51,16 @@
 }
 
 /* Responsive of contacto */
+@media (max-width: 1440px){
+  .contacto-info {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    justify-content: center;
 
+  }
+}
 @media (max-width: 768px) {
 
   .contacto{
