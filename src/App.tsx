@@ -9,6 +9,7 @@ import VentajasDeDigitalizar from './components/VentajasDeDigitalizar';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ContactButton from './components/Buttons/ContactButton';
+import WhatsAppButton from './components/Buttons/WhatsAppButton';
 
 function App() {
   useEffect(() => {
@@ -34,6 +35,7 @@ function App() {
       <VentajasDeDigitalizar />
       <Contacto />
       <Footer />
+      <WhatsAppButton phoneNumber="50246677427" />
     </div>
   );
 }

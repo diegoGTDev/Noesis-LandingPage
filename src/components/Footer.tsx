@@ -14,9 +14,9 @@ export default function Footer(){
           {/* <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-button">
             <i className="fab fa-linkedin"></i>
           </a> */}
-          <a href="https://wa.me/50246677427" target="_blank" rel="noopener noreferrer" className="social-button">
+          {/* <a href="https://wa.me/50246677427" target="_blank" rel="noopener noreferrer" className="social-button">
             <i className="fab fa-whatsapp"></i>
-          </a>
+          </a> */}
           <a href="https://wa.me/50233574461" target="_blank" rel="noopener noreferrer" className="social-button">
             <i className="fab fa-whatsapp"></i>
           </a>
