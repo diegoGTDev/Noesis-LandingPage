@@ -1,0 +1,88 @@
+
+.logos-titulo {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2em;
+  margin-bottom: 1.2em;
+  color: #222;
+}
+.marquee {
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+  background: transparent;
+  padding: 0.5em 0 1.5em 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.marquee-inner {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  animation: marquee-move 45s linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+.slow-marquee {
+  animation-duration: 70s !important;
+}
+
+.tecnologias {
+  width: 100%;
+  padding: 2.5em 0 1.5em 0;
+  text-align: center;
+}
+.tecnologias h3 {
+  margin-bottom: 1.2em;
+}
+.icono-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5em;
+  align-items: center;
+}
+
+@keyframes marquee-move {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Duplicar los elementos para simular el bucle infinito */
+.marquee-inner {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  animation: marquee-move 45s linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+
+@media (min-width: 900px) {
+  .marquee-inner {
+    gap: 4em;
+  }
+  .marquee .icono-tecnologias {
+    height: 48px;
+  }
+}
+@media (max-width: 700px) {
+  .marquee-inner {
+    gap: 1.5em;
+  }
+  .marquee .icono-tecnologias {
+    height: 28px;
+  }
+}
+.marquee .icono-tecnologias {
+  height: 48px;
+  width: auto;
+  opacity: 0.8;
+  transition: filter 0.2s, opacity 0.2s;
+  background: transparent;
+}
+.marquee .icono-tecnologias:hover {
+  filter: drop-shadow(0 0 1em #646cffaa);
+  opacity: 1;
+}

@@ -22,9 +22,12 @@
 }
 .nosotros-content p{
     font-size: 1.2em;
-    color: #666;
+    color: #141414;
     line-height: 1.5;
     margin-bottom: 1rem;
+}
+.nosotros-content span{
+    color: #777777;
 }
 .nosotros-content{
     max-width: 40%;
