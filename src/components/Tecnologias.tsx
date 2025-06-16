@@ -9,7 +9,7 @@ import DotNetIcon from "../icons/DotNetIcon";
 import ExpressIcon from "../icons/ExpressIcon";
 import JavascriptIcon from "../icons/JavascriptIcon";
 import TypescriptIcon from "../icons/TypescriptIcon";
-
+import "../styles/Tecnologias.css"; 
 export default function Tecnologias() {
     const tecnologias = [
         { React: ReactIcon },

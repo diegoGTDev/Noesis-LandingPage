@@ -1,0 +1,118 @@
+.main-nav {
+  width: 100%;
+  background: #f7f7f7cc;
+  box-shadow: 0 2px 8px #0001;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.main-nav.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: #f7f7f7ee;
+  box-shadow: 0 2px 8px #0001;
+  z-index: 100;
+}
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.3em 2em;
+}
+.logo-nav {
+  width: 60px;
+  height: auto;
+  margin-right: 1.5em;
+}
+.main-nav ul {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-nav a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+.main-nav a:hover {
+  color: #444;
+}
+
+.menu-hamburguesa {
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 1em;
+  z-index: 101;
+}
+.menu-bar {
+  width: 28px;
+  height: 3px;
+  background: #111;
+  margin: 4px 0;
+  border-radius: 2px;
+  display: block;
+  transition: all 0.3s;
+}
+
+
+@media (max-width: 900px) {
+  .main-nav ul,
+  .main-nav .nav-links {
+    display: none;
+  }
+  .main-nav .menu-hamburguesa {
+    display: flex;
+  }
+  .main-nav .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background: #f7f7f7ee;
+    box-shadow: 0 2px 8px #0001;
+    z-index: 100;
+    padding: 5.5em 0 1.2em 0;
+    gap: 1.2em;
+    align-items: center;
+    font-size: 1.1em;
+  }
+  .main-nav .nav-links.open li {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px){
+    .main-nav .nav-links.open {
+    top: 48px;
+    font-size: 1em;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 0.3em 0.5em;
+  }
+  .main-nav ul {
+    gap: 0.5em;
+    font-size: 0.98em;
+  }
+
+}
