@@ -23,7 +23,7 @@ function App() {
           <h1>NOESIS</h1>
           <span className="slogan">Pensando en arte, codificando en alma</span>
           <p className="hero-desc">
-            En NOESIS creamos soluciones de software personalizadas para impulsar tu negocio. Nuestro equipo combina creatividad, experiencia y pasión por la tecnología para transformar ideas en productos digitales de alto impacto.
+            En <span><strong>NOESIS</strong></span> creamos soluciones de software personalizadas para impulsar tu negocio. Nuestro equipo combina <span>creatividad</span>, <span>experiencia</span> y <span>pasión por la tecnología</span> para transformar ideas en productos digitales de alto impacto.
           </p>
           <ContactButton />
         </div>

@@ -24,6 +24,9 @@
   text-align: justify;
 
 }
+.contacto-info-text span{
+  color: #7F7F7F;
+}
 .contacto h3, p{
   margin: 0;
 }
