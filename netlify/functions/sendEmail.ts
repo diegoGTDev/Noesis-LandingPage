@@ -27,7 +27,7 @@ export default async (request: Request) => {
   try {
     await resend.emails.send({
       from: "Noesis <Noesis@resend.dev>",
-      to: ["delivered@resend.dev"],
+      to: ["delivered@resend.dev", "andreelopez334@gmail.com", "noesis.startup@gmail.com"],
       subject: "Nuevo mensaje de contacto",
       html: `<p>Nombre: ${nombre}</p><p>Email: ${email}</p><p>Mensaje: ${mensaje}</p>`,
     });
