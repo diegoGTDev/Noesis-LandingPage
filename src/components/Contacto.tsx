@@ -1,7 +1,6 @@
 import ArrowIcon from "../icons/ArrowIcon";
 import TextHumanSVG from "../icons/TextHumanSVG";
 import '../styles/Contacto.css'; // Asegúrate de tener este archivo CSS con los estilos necesarios
-import { sendEmail } from "../../netlify/functions/sendEmail";
 import { useState } from "react";
 export default function Contacto(){
 
@@ -11,7 +10,12 @@ export default function Contacto(){
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        await sendEmail(nombre, email, mensaje);
+        await fetch("/.netlify/functions/sendEmail", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nombre, email, mensaje }),
+        });
+        // Puedes agregar manejo de respuesta o mostrar un mensaje de éxito/error aquí
     };
 
     return(
