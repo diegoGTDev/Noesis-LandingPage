@@ -26,7 +26,7 @@ export default async (request: Request) => {
   const resend = new Resend(api_key);
   try {
     await resend.emails.send({
-      from: "Noesis <Noesis@startup.dev>",
+      from: "Noesis <Noesis@resend.dev>",
       to: ["delivered@resend.dev"],
       subject: "Nuevo mensaje de contacto",
       html: `<p>Nombre: ${nombre}</p><p>Email: ${email}</p><p>Mensaje: ${mensaje}</p>`,
