@@ -1,7 +1,9 @@
 import { Resend } from 'resend';
-// Si pruebas localmente, puedes requerir dotenv aquí:
-import dotenv from 'dotenv';
-dotenv.config();
+
+// Cargar dotenv solo en desarrollo usando import dinámico
+if (process.env.NODE_ENV !== 'production') {
+  import('dotenv').then(dotenv => dotenv.config());
+}
 
 export async function sendEmail(nombre: string, email: string, mensaje: string) {
     const api_key: string = process.env.VITE_api_key || ""; 
