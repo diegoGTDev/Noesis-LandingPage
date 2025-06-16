@@ -15,6 +15,7 @@ export default async (request: Request) => {
   }
 
   const { nombre, email, mensaje } = await request.json();
+  const { nombre, email, mensaje } = await request.json();
   if (!nombre || !email || !mensaje) {
     return new Response(JSON.stringify({ error: "Faltan campos requeridos" }), {
       status: 400,
