@@ -108,7 +108,7 @@
 
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 820px) {
 
   .contacto{
     height: auto;
@@ -151,9 +151,9 @@
   .contacto-info p {
     font-size: 0.9em;
   }
-  .contacto-info-svg {
+  .contacto .contacto-info-svg {
     width: 100%;
-    max-width: 300px;
+    max-width: 60vw;
     height: auto;
   }
 }
