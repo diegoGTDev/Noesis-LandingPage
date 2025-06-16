@@ -24,10 +24,9 @@ export default async (request: Request) => {
 
   const api_key: string = process.env.VITE_api_key || "";
   const resend = new Resend(api_key);
-  console.log("API Key:", api_key); // Para depuración, eliminar en producción
   try {
     await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from: "Noesis <Noesis@startup.dev>",
       to: ["delivered@resend.dev"],
       subject: "Nuevo mensaje de contacto",
       html: `<p>Nombre: ${nombre}</p><p>Email: ${email}</p><p>Mensaje: ${mensaje}</p>`,
