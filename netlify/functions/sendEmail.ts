@@ -6,20 +6,20 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // Netlify Function handler
-export default async function handler(event: any) {
-  if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ error: 'Method Not Allowed' })
-    };
+export default async (request: Request) => {
+  if (request.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method Not Allowed' }), {
+      status: 405,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 
-  const { nombre, email, mensaje } = JSON.parse(event.body || '{}');
+  const { nombre, email, mensaje } = await request.json();
   if (!nombre || !email || !mensaje) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: 'Faltan campos requeridos' })
-    };
+    return new Response(JSON.stringify({ error: 'Faltan campos requeridos' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 
   const api_key: string = process.env.VITE_api_key || "";
@@ -32,14 +32,14 @@ export default async function handler(event: any) {
       subject: 'Nuevo mensaje de contacto',
       html: `<p>Nombre: ${nombre}</p><p>Email: ${email}</p><p>Mensaje: ${mensaje}</p>`
     });
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: 'Correo enviado correctamente' })
-    };
+    return new Response(JSON.stringify({ message: 'Correo enviado correctamente' }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
   } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'Error al enviar el correo' })
-    };
+    return new Response(JSON.stringify({ error: 'Error al enviar el correo' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
-}
+};
