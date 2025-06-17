@@ -52,7 +52,7 @@ export default function VentajasDeDigitalizar() {
   }, []);
 
   return (
-    <section className="ventajas-digitalizar">
+    <section id="ventajas" className="ventajas-digitalizar">
       <h2>Ventajas de Digitalizar tu Negocio</h2>                            
       <div className="ventajas-lista">
         {ventajas.map((v, i) => (

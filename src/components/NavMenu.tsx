@@ -17,7 +17,7 @@ export default function NavMenu() {
                 <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
                     <li><a href="#inicio" onClick={handleNavClick}>Inicio</a></li>
                     <li><a href="#nosotros" onClick={handleNavClick}>Nosotros</a></li>
-                    <li><a href="#servicios" onClick={handleNavClick}>Servicios</a></li>
+                    <li><a href="#ventajas" onClick={handleNavClick}>Ventajas</a></li>
                     <li><a href="#contacto" onClick={handleNavClick}>Contáctenos</a></li>
                 </ul>
             </div>
