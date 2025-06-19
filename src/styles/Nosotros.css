@@ -2,7 +2,10 @@
     padding: 2rem 2rem 2rem 2rem;
     width: 100%;
     height: auto;
-    background-color: #D7D7D7;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(2px);
+
+    -webkit-backdrop-filter: blur(2px);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -13,6 +16,7 @@
     font-size: 2em;
     margin-top: 0;
     color: #333;
+    
 }
 .nosotros-content h3{
     text-align: center;
@@ -32,6 +36,7 @@
 .nosotros-content{
     max-width: 40%;
     text-align: justify;
+
 }
 
 .nosotros-team-svg{
