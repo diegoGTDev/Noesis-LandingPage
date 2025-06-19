@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Tecnologias from './components/Tecnologias';
 import { Nosotros } from './components/Nosotros';
 import VentajasDeDigitalizar from './components/VentajasDeDigitalizar';
+import ParticlesBackground from './components/ParticlesBackground';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ContactButton from './components/Buttons/ContactButton';
@@ -17,6 +18,7 @@ function App() {
   }, []);
   return (
     <div className="noesis-landing">
+      <ParticlesBackground />
       <NavMenu />
       <section className="hero" id="inicio">
         <div className="hero-content">
