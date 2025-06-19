@@ -45,8 +45,8 @@ html {
 }
 
 body {
-  background: #e5e5e5;
-  color: #111;
+  background: transparent;
+  color: #1a1a1a;
   font-family: "Fira Mono", "Consolas", "Courier New", monospace;
 }
 
@@ -57,7 +57,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   font-family: "Fira Mono", "Consolas", "Courier New", monospace;
-  background: #e5e5e5;
+  background: transparent;
   position: relative;
   overflow-x: hidden;
 }
@@ -84,7 +84,7 @@ body {
   margin-right: auto;
 }
 .hero {
-  background: #e5e5e5;
+  background: transparent;
   padding-top: 110px;
   padding-bottom: 40px;
   text-align: center;
@@ -106,17 +106,20 @@ body {
   font-size: 5.5em;
   margin-bottom: 0.2em;
   letter-spacing: 5px;
+  color: #1a1a1a;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .hero-desc {
   font-size: 1.15em;
-  color: #222;
+  color: #1a1a1a;
   margin-bottom: 1.5em;
   text-align: center;
 }
 
 .hero-desc span {
   color: #000000;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .hero-wave {
   position: absolute;
@@ -149,17 +152,16 @@ body {
     border-color: transparent;
   }
   50% {
-    border-color: #111;
+    border-color: #1a1a1a;
   }
 }
 
 .slogan {
   display: block;
   font-size: 1.42em;
-
   font-weight: 500;
   margin: 0.5em 0 1.5em 0;
-  color: #111;
+  color: #1a1a1a;
   white-space: nowrap;
   border-right: 4px solid;
   width: 38ch;
@@ -168,6 +170,7 @@ body {
   overflow: hidden;
   animation: typing 10s steps(38) infinite, blink 0.7s step-end infinite;
   box-sizing: border-box;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 400px) {

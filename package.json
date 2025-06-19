@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@netlify/functions": "^4.1.5",
+    "@pablotheblink/fluxjs": "^1.0.5",
     "aos": "^2.3.4",
     "dotenv": "^16.5.0",
     "react": "^19.1.0",
