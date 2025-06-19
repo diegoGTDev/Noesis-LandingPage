@@ -1,5 +1,4 @@
-import logo from '../assets/logo-removebg-preview.png';
-import {useState} from 'react';
+import {useState} from 'react'; 
 import '../styles/NavMenu.css'; 
 
 export default function NavMenu() {
