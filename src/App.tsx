@@ -18,9 +18,9 @@ function App() {
   }, []);
   return (
     <div className="noesis-landing">
-      <ParticlesBackground />
       <NavMenu />
       <section className="hero" id="inicio">
+        <ParticlesBackground />
         <div className="hero-content">
           <h1>NOESIS</h1>
           <span className="slogan">Pensando en arte, codificando en alma</span>

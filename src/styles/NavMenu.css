@@ -1,22 +1,19 @@
 .main-nav {
   width: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Negro translúcido */
-  box-shadow: 0 2px 8px #000;
-  position: sticky;
+  position: fixed; /* Siempre fijo */
   top: 0;
-  z-index: 10;
-  backdrop-filter: blur(6px); /* Opcional: desenfoque de fondo */
+  z-index: 100;
+  background: #000000; /* Transparente por defecto */
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-.main-nav.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.7); /* Negro translúcido */
-  box-shadow: 2 4px 16px #000;
-  z-index: 100;
-  backdrop-filter: blur(10px); /* Opcional: desenfoque de fondo */
+/* Estilo que se aplica al hacer scroll */
+.main-nav.scrolled {
+  background: rgba(15, 15, 35, 0.6) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
 }
 
 .nav-content {
@@ -105,10 +102,10 @@
 }
 
 .main-nav a {
-  color: #fff;
+  color: #f0f0f0; /* Un blanco menos intenso */
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1em;
+  font-weight: 500; /* Tipografía más ligera */
+  font-size: 1.05em;
   letter-spacing: 1px;
   transition: color 0.2s;
 }
@@ -117,25 +114,23 @@
   color: #ccc;
 }
 
-/* Botón contacto (desktop) */
+/* Botón "Contáctenos" minimalista */
 .contacto-btn {
-  background: #000000;
-  color: #fff !important;
-  padding: 0.7em 1.6em;
-  border-radius: 12px;
+  background: transparent; /* Sin fondo */
+  color: #f0f0f0 !important;
+  padding: 0.6em 1.5em;
+  border-radius: 8px;
   font-weight: 600;
-  font-size: 1.08em;
-  border: none;
-  outline: none;
-  transition: background 0.2s, color 0.2s;
+  border: 1px solid rgba(240, 240, 240, 0.5); /* Borde sutil */
+  transition: background-color 0.3s, border-color 0.3s;
   box-shadow: 0 2px 6px #0003;
   text-align: center;
   white-space: nowrap;
 }
 
 .contacto-btn:hover {
-  background: #00246d;
-  color: #fff;
+  background: rgba(240, 240, 240, 0.1); /* Efecto hover sutil */
+  border-color: rgba(240, 240, 240, 0.8);
 }
 
 .explore-btn {
