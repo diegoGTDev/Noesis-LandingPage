@@ -1,14 +1,32 @@
-import {useState} from 'react'; 
+import logo from '../assets/noesis-logo.svg';
+import { useState, useEffect } from 'react';
 import '../styles/NavMenu.css'; 
 
 export default function NavMenu() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
     const handleNavClick = () => setMenuOpen(false);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 20;
+            if (isScrolled !== scrolled) {
+                setScrolled(isScrolled);
+            }
+        };
+
+        document.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            document.removeEventListener('scroll', handleScroll);
+        };
+    }, [scrolled]);
+
     return (
-        <nav className="main-nav fixed">
+        <nav className={`main-nav ${scrolled ? 'scrolled' : ''}`}>
             <div className="nav-content">
-                <img alt="Logo Noesis" className="logo-nav" />
+                <img src={logo} alt="Logo Noesis" className="logo-nav" />
                 <button
                   className={`menu-hamburguesa${menuOpen ? ' open' : ''}`}
                   onClick={() => setMenuOpen(!menuOpen)}

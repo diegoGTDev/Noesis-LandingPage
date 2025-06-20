@@ -30,15 +30,19 @@
   height: 100%;
   min-height: 220px;
   margin: 0 auto;
-  transition:
-    transform 0.3s cubic-bezier(.4,2,.6,1),
-    box-shadow 0.3s;
   box-sizing: border-box;
   will-change: transform;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(3px);
 }
+.ventaja-item:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9);
+}
+
+
+
 
 .ventaja-img {
   width: 160px;
