@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
+  background-color: #eeeded;
 }
 
 html {
@@ -84,12 +85,15 @@ body {
   margin-right: auto;
 }
 .hero {
-  background: transparent;
+  /* background: #e5e5e5; */
   padding-top: 110px;
   padding-bottom: 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 100%;
 }
 .hero-content {
   display: flex;

@@ -8,7 +8,11 @@ interface Particle {
   speedY: number;
 }
 
-const ParticlesBackground = () => {
+interface ParticlesBackgroundProps {
+  className?: string;
+}
+
+const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className = '' }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -109,7 +113,10 @@ const ParticlesBackground = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="particles-container">
+    <div 
+      ref={containerRef}
+      className={`particles-background-container ${className}`}
+    >
       <canvas ref={canvasRef} className="particles-canvas" />
     </div>
   );
