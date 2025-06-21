@@ -1,4 +1,3 @@
-import logo from '../assets/noesis-logo.svg';
 import { useState, useEffect } from 'react';
 import '../styles/NavMenu.css'; 
 //Import from assets with astro
@@ -27,11 +26,7 @@ export default function NavMenu() {
     return (
         <nav className={`main-nav ${scrolled ? 'scrolled' : ''}`}>
             <div className="nav-content">
-<<<<<<< HEAD
-                <img alt="Logo Noesis" src={logo} className="logo-nav" />
-=======
                 <img src={logo} alt="Logo Noesis" className="logo-nav" />
->>>>>>> 0ce8c6d317608626dfa4987c23d01628c89c3bd8
                 <button
                   className={`menu-hamburguesa${menuOpen ? ' open' : ''}`}
                   onClick={() => setMenuOpen(!menuOpen)}
