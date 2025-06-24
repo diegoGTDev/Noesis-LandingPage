@@ -16,9 +16,24 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className = '
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
   const particlesRef = useRef<Particle[]>([]);
   const animationFrameRef = useRef<number>(0);
+  
+  // Hook para detectar si es móvil
+  useEffect(() => {
+    const checkDevice = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
 
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+
+    return () => window.removeEventListener('resize', checkDevice);
+  }, []);
+
+  const cantidadDeParticulas = isMobile ? 50 : 120; // Menos partículas en móvil
+  
   useEffect(() => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
@@ -33,22 +48,27 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className = '
     window.addEventListener('resize', resizeCanvas);
 
     // Inicializar partículas
-    particlesRef.current = Array(150).fill(null).map(() => ({
+    particlesRef.current = Array(cantidadDeParticulas).fill(null).map(() => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       speedX: (Math.random() - 0.5) * 2,
       speedY: (Math.random() - 0.5) * 2
     }));
 
-    // Seguimiento del mouse
+    // Seguimiento del mouse (solo en desktop)
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      setMousePos({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top
-      });
+      if (!isMobile) {
+        const rect = canvas.getBoundingClientRect();
+        setMousePos({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top
+        });
+      }
     };
-    canvas.addEventListener('mousemove', handleMouseMove);
+    
+    if (!isMobile) {
+      canvas.addEventListener('mousemove', handleMouseMove);
+    }
 
     // Función de animación
     const animate = () => {
@@ -68,13 +88,15 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className = '
         if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
 
-        // Efecto del mouse
-        const dx = mousePos.x - particle.x;
-        const dy = mousePos.y - particle.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        if (distance < 100) {
-          particle.x += (dx / distance) * 2;
-          particle.y += (dy / distance) * 2;
+        // Efecto del mouse (solo en desktop)
+        if (!isMobile) {
+          const dx = mousePos.x - particle.x;
+          const dy = mousePos.y - particle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < 100) {
+            particle.x += (dx / distance) * 2;
+            particle.y += (dy / distance) * 2;
+          }
         }
 
         // Dibujar partícula
@@ -105,12 +127,14 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className = '
     // Limpieza
     return () => {
       window.removeEventListener('resize', resizeCanvas);
-      canvas.removeEventListener('mousemove', handleMouseMove);
+      if (!isMobile) {
+        canvas.removeEventListener('mousemove', handleMouseMove);
+      }
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, []);
+  }, [isMobile, mousePos.x, mousePos.y, cantidadDeParticulas]);
 
   return (
     <div 
@@ -122,4 +146,4 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className = '
   );
 };
 
-export default ParticlesBackground; 
+export default ParticlesBackground;
