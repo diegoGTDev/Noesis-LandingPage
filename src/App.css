@@ -1,5 +1,4 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 0;
   text-align: center;
@@ -52,6 +51,7 @@ body {
 }
 
 .noesis-landing {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -233,15 +233,12 @@ main {
   .logo-nav {
     width: 40px;
   }
-  .noesis-landing {
-    padding: 0 0.2em;
-  }
 }
 
 html,
 body,
 #root {
-  width: 100vw;
+  width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
   box-sizing: border-box;

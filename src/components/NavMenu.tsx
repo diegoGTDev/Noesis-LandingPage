@@ -45,9 +45,8 @@ export default function NavMenu() {
                     <li><a href="#inicio" onClick={handleNavClick}>Inicio</a></li>
                     <li><a href="#nosotros" onClick={handleNavClick}>Nosotros</a></li>
                     <li><a href="#ventajas" onClick={handleNavClick}> Digitalizate</a></li>
-                    <li className="contacto-li"><a href="#contacto" className="contacto-btn" onClick={handleNavClick}>Contáctenos</a></li>
                 </ul>
-                <a href="#contacto" className="contacto-btn desktop-only">Contáctenos</a>
+                {/* <a href="#contacto" className="contacto-btn desktop-only">Contáctenos</a> */}
             </div>
             {menuOpen && <div className="nav-overlay" onClick={() => setMenuOpen(false)}></div>}
         </nav>
