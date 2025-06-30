@@ -37,7 +37,7 @@ export default function Contacto() {
           <h3>¿Tienes preguntas?</h3>
           <p>¿Tienes alguna pregunta o necesitas más <span>información</span>? ¡Estamos aquí para ayudarte!</p>
           <p>Completa el formulario y nos pondremos en <span>contacto</span> contigo lo antes posible.</p>
-          <p>También puedes escribirnos a <a href="mailto:neosis.startup@gmail.com">nuestro correo</a></p>
+          <p>También puedes escribirnos a <a href="mailto:noesis.startup@gmail.com">nuestro correo</a></p>
         </div>
         <TextHumanSVG className="contacto-info-svg" />
       </div>
