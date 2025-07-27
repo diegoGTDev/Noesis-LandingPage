@@ -15,7 +15,6 @@ interface ParticlesBackgroundProps {
 const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className = '' }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
   const particlesRef = useRef<Particle[]>([]);
   const animationFrameRef = useRef<number>(0);
@@ -55,21 +54,6 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className = '
       speedY: (Math.random() - 0.5) * 2
     }));
 
-    // Seguimiento del mouse (solo en desktop)
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isMobile) {
-        const rect = canvas.getBoundingClientRect();
-        setMousePos({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top
-        });
-      }
-    };
-    
-    if (!isMobile) {
-      canvas.addEventListener('mousemove', handleMouseMove);
-    }
-
     // Función de animación
     const animate = () => {
       const ctx = canvas.getContext('2d');
@@ -87,17 +71,6 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className = '
         // Rebotar en los bordes
         if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
-
-        // Efecto del mouse (solo en desktop)
-        if (!isMobile) {
-          const dx = mousePos.x - particle.x;
-          const dy = mousePos.y - particle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < 100) {
-            particle.x += (dx / distance) * 2;
-            particle.y += (dy / distance) * 2;
-          }
-        }
 
         // Dibujar partícula
         ctx.beginPath();
@@ -127,14 +100,11 @@ const ParticlesBackground: React.FC<ParticlesBackgroundProps> = ({ className = '
     // Limpieza
     return () => {
       window.removeEventListener('resize', resizeCanvas);
-      if (!isMobile) {
-        canvas.removeEventListener('mousemove', handleMouseMove);
-      }
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [isMobile, mousePos.x, mousePos.y, cantidadDeParticulas]);
+  }, [isMobile, cantidadDeParticulas]);
 
   return (
     <div 
