@@ -44,6 +44,7 @@ export default function NavMenu() {
                     )}
                     <li><a href="#inicio" onClick={handleNavClick}>Inicio</a></li>
                     <li><a href="#nosotros" onClick={handleNavClick}>Nosotros</a></li>
+                    <li><a href="#clientes" onClick={handleNavClick}>Clientes</a></li>
                     <li><a href="#ventajas" onClick={handleNavClick}> Digitalizate</a></li>
                 </ul>
                 {/* <a href="#contacto" className="contacto-btn desktop-only">Contáctenos</a> */}
