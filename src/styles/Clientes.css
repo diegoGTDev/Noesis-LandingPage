@@ -1,0 +1,102 @@
+.clientes-section {
+  background-color: #ffffff;
+  padding: 60px 0;
+  width: 100%;
+}
+
+.clientes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.clientes-titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 50px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.clientes-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.cliente-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.cliente-logo:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cliente-icono {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.cliente-icono img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.cliente-nombre {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.separador {
+  width: 100%;
+  height: 1px;
+  background-color: #e5e5e5;
+  margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .clientes-logos {
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cliente-logo {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clientes-section {
+    padding: 40px 0;
+  }
+  
+  .clientes-logos {
+    gap: 30px;
+  }
+  
+  .cliente-logo {
+    font-size: 14px;
+  }
+} 

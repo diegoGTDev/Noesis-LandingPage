@@ -11,6 +11,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ContactButton from './components/Buttons/ContactButton';
 import WhatsAppButton from './components/Buttons/WhatsAppButton';
+import Clientes from './components/Clientes';
 
 function App() {
   useEffect(() => {
@@ -34,6 +35,7 @@ function App() {
         <Tecnologias />
       </section>
       <Nosotros />
+      <Clientes />
       <VentajasDeDigitalizar />
       <Contacto />
       <Footer />
